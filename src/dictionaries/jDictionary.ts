@@ -1,0 +1,10 @@
+const jDictionary = ["major",
+"james",
+"japan",
+"enjoy",
+"jones",
+"joint",
+"judge",
+"jokes",
+"jerry",
+"jimmy"]; export default jDictionary;

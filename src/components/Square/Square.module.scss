@@ -1,0 +1,67 @@
+.square{
+    width: var(--tile-max-size);
+    height: var(--tile-max-size);
+    // background-color: var(--board);;
+    border: solid 1px var(--grid);
+    font-size: 2rem;
+    padding: 0;
+    position: relative;
+    transition: background-color 0.3s ;
+    
+    &.blocked{
+        background-color: black; 
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+    
+    * {
+        color: var(--tile-text); 
+    }
+
+    &.inValidWord *{
+        color: var(--green)
+    }
+
+    button{
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.connectedPetal{
+
+        // background-color: var(--connected-petal);
+        box-shadow: inset 0 0 8px var(--connected-petal);
+        background-color: var(--petal);
+    }
+
+    &.petal{
+        background-color: var(--petal);
+    }
+
+    &.flower{
+        // background: var(--flower);
+        transition-duration: 0;
+    }
+    &.stem{
+        transition: none;
+        // background-color: var(--stem);
+        transition-duration: 0;
+    }
+    
+    &.wall{
+        z-index: -1;
+        background: var(--rock);
+        transition-duration: 0;
+    }
+
+    &.start{
+        background: var(--start);
+    }
+
+    &.end{
+        background: var(--end);
+    }
+
+}

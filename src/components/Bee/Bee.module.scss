@@ -1,0 +1,23 @@
+
+
+.bee, .honey{
+    position: absolute;
+    width: var(--tile-max-size);
+    z-index: 999900000;
+    height: 40px;;
+    width: 40px;;
+}
+
+
+
+.bee{
+    // 3s alternate infinite
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards ;
+    // animation-
+
+}
+.honey{
+    // width: var(--tile-max-size);
+}

@@ -1,0 +1,197 @@
+.flower{
+
+    stroke: #000;
+    stroke-width: 4px;
+    fill: var(--green); 
+    margin: auto;
+    width:  100%;
+    height: 100%;
+    display: flex;
+    
+    .budGroup{
+        margin: 30% auto;; // TODO probably a hack that won't respond well  
+        width:  80%; 
+        height: 80%;
+    }
+
+    &.isLocked{
+        svg.bud{
+            transform: none !important;
+            // fill: darken(#198754, 15%);
+
+        }
+    }
+
+    
+    .top{
+        z-index: 2;;
+    } 
+
+    svg{
+        position: absolute;
+        display: block;
+
+    }
+
+    svg.bud{
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        transition: transform 0.4s, color 0.4s;
+        
+        &.left{
+
+            transform: rotate(-30deg);
+        }
+        &.right{ 
+            transform: rotate(30deg); 
+        }
+        &.middle1, &.middle2{
+            transition-delay: 0.15s;
+        }
+    
+                     
+        }
+        
+        &:hover, &:focus   {
+            .bud.left{
+                transform: rotate(-45deg); 
+                
+                transform-origin: center;
+            }
+            .bud.middle1{
+                transform: scale(1.1) rotate(-2deg);
+                transform-origin: bottom;
+                fill: lighten(#198754, 5%);
+            }
+            .bud.middle2{
+                transform: scale(1.1) rotate(2deg);
+                transform-origin: bottom;
+                fill: lighten(#198754, 5%);
+            }
+            .bud.right{
+
+                transform: rotate(45deg);
+            }
+    }
+    &.grown {
+        svg.bud{
+            // fill: var(--yellow)
+            transform-origin: center !important ; // TODO hack
+        }
+        // background-color: blue;;
+        svg.bud.left{
+            transform: rotate(-60deg) ;  
+            
+        }
+        svg.bud.middle1{
+            transform:  rotate(-40deg);
+            transform-origin: center;
+            fill: lighten(#198754, 5%);
+        }
+        svg.bud.middle2{
+            transform: rotate(40deg);
+            transform-origin: center;
+            fill: lighten(#198754, 5%);
+        }
+        svg.bud.right{
+
+            transform: rotate(60deg);
+        }
+    }
+
+    @keyframes grow {
+        0%{
+            opacity: 0;;
+            // height: 10px;;
+            transform: scale(0.1);
+        } 
+        30%{
+            opacity: 1;;
+            // height: 10px;;
+            transform: scale(0.1);
+        } 
+        // 75%{
+        //     opacity: 1;;
+        //     // height: 10px;;
+        //     transform: scale(0.5);
+        // } 
+        100%{ 
+            // height: 40px;;
+            transform: scale(1)
+            // trnsform
+        }
+    }
+    
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;;
+            // height: 10px;;
+        } 
+        100%{ 
+            opacity: 1;;
+        }
+    }
+
+    .petalGroup, .petalGroup>div{
+        // display: none; // TODO temp
+        width: 100%;
+        height: 100%;;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        z-index: 99;;
+        svg{
+            transform-origin: bottom; // parent rotate affects this making it correct for all angles
+        }
+    }
+
+    .growable{
+
+    }
+
+.squarePetal{
+    background-color: var(--flower);
+    height: 100%;
+    border-radius: 4px;
+    animation: fadeIn forwards 0.4s ease-in;
+
+}
+    div.above{
+            transform: translateY(calc(0px - var(--petal-transform)));
+            transform-origin: bottom;
+    }
+
+    div.right{
+        transform: translateX(var(--petal-transform)) rotate(90deg) ;
+    }
+    div.below{
+        transform: translateY(var(--petal-transform)) rotate(180deg);
+    }
+    div.left{
+        transform: translateX(calc(0px - var(--petal-transform))) rotate(270deg);
+    }
+
+    svg.petal{ 
+
+            fill: var(--flower);
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        z-index: 5;
+        transform-origin: center;
+        stroke-width: 8px;
+        stroke: black;;
+        animation: grow alternate 1s ;
+        height: 100%;
+        width: 100%;
+        transform-origin: center;
+        // transition: transform 0.4s, color 0.4s;
+        
+        // transform: scale(1.5)
+
+ 
+        
+    }
+
+}

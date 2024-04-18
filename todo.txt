@@ -1,0 +1,12 @@
+todo.txt
+
+address the TODOs in code
+
+Animations
+
+the animations will make or break this 
+
+stop messing with the animations in code, need to go design mode -
+
+some Qs about interactions - need to see what is underneath petal (Rock or flowerbud) and also need to just think about the animation
+need to think as well about the look/feel for the game - flowers looking more flowery means the path is less pathy

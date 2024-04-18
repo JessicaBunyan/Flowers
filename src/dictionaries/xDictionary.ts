@@ -1,0 +1,10 @@
+const xDictionary = ["index",
+"texas",
+"extra",
+"fixed",
+"taxes",
+"boxes",
+"mixed",
+"exist",
+"exact",
+"excel"]; export default xDictionary;
